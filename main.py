@@ -12,19 +12,7 @@ def generate_password():
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
-    # Generate chars for password
-    # nr_letters = randint(8, 10)
-    # nr_symbols = randint(2, 4)
-    # nr_numbers = randint(2, 4)
-    # password_list = []
-    # for char in range(nr_letters):
-    #     password_list.append(choice(letters))
-    # for char in range(nr_symbols):
-    #     password_list += choice(symbols)
-    # for char in range(nr_numbers):
-    #     password_list += choice(numbers)
-
-    # Same functionality as above but using lists comprehensions and shortened code
+    # Generate password using lists comprehensions
     password_letters = [choice(letters) for _ in range(randint(8, 10))]
     password_symbols = [choice(symbols) for _ in range(randint(2, 4))]
     password_numbers = [choice(numbers) for _ in range(randint(2, 4))]
@@ -37,7 +25,7 @@ def generate_password():
     password = "".join(password_list)
     password_entry.insert(0, password)
     pyperclip.copy(password)
-    
+
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
